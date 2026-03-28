@@ -108,11 +108,11 @@ http://localhost:3000
 ---
 
 ## 📸 Screenshots
-
+```
 > Add your screenshots here
-![Home Page]home.png
-![Readmore Page]readmore.png
-
+![Home Page](home.png)
+![Readmore Page](readmore.png)
+```
 ---
 
 ## 📚 Concepts Covered
