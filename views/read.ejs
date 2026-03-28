@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserRegistry</title>
+
+    <!-- Tailwind CDN for styling user cards -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <div class="w-full min-h-screen bg-zinc-900 p-10 text-white">
+
+        <!-- Link to go back to home / create page -->
+        <a class="text-blue-500" href="/">back to home</a>
+
+        <!-- Page heading -->
+        <h1 class="text-3xl tracking-tighter mb-3">All Users</h1>
+
+        <!-- Users container -->
+        <div class="users flex gap-3 flex-wrap">
+
+            <!-- Checking if users exist -->
+            <% if(users.length > 0){ %>
+
+                <!-- Looping through users array -->
+                <% users.forEach(function(user){ %>
+
+                    <!-- Individual user card -->
+                    <div class="w-72 p-4 bg-zinc-800 rounded-lg">
+
+                        <!-- Image container -->
+                        <div class="w-full h-72 rounded-lg bg-zinc-700">
+                            <img
+                                class="w-full h-full object-cover object-top"
+                                src="<%= user.image %>"
+                                alt="">
+                        </div>
+
+                        <!-- Displaying user name -->
+                        <h3 class="text-xl mt-3 tracking-tighter">
+                            <%= user.name %>
+                        </h3>
+
+                        <!-- Displaying user email -->
+                        <h5 class="text-zinc-500">
+                            <%= user.email %>
+                        </h5>
+
+                        <!-- Edit & Delete actions -->
+                        <div class="flex gap-3 mt-10">
+
+                            <!-- Edit user using dynamic ID -->
+                            <a href="/edit/<%= user._id %>" class="text-zinc-200">
+                                Edit User
+                            </a>
+
+                            <!-- Delete user using dynamic ID -->
+                            <a href="/delete/<%= user._id %>" class="text-red-500">
+                                Delete User
+                            </a>
+
+                        </div>
+                    </div>
+
+                <% }) %>
+
+            <% } else { %>
+
+                <!-- Message shown when no users exist -->
+                <h3 class="text-zinc-500">no users yet</h3>
+
+            <% } %>
+
+        </div>
+    </div>
+
+</body>
+</html>

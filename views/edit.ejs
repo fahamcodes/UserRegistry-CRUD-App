@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserRegistry</title>
+
+    <!-- Tailwind CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <div class="w-full h-full bg-zinc-900 p-10 text-white">
+
+        <!-- Navigation link -->
+        <div class="nav mb-10">
+            <a class="text-blue-500" href="/read">Read Users</a>
+        </div>
+
+        <!-- Page heading -->
+        <h1 class="text-3xl tracking-tighter mb-3">Update User</h1>
+
+        <!-- Update form -->
+        <!-- User ID is passed dynamically in the route -->
+        <form action="/update/<%= user._id %>" method="post">
+
+            <!-- Name field with existing value -->
+            <input
+                class="px-5 py-2 border-2 bg-transparent border-zinc-800 rounded-lg"
+                placeholder="name"
+                type="text"
+                name="name"
+                value="<%= user.name %>">
+
+            <!-- Email field with existing value -->
+            <input
+                class="px-5 py-2 border-2 bg-transparent border-zinc-800 rounded-lg"
+                placeholder="email"
+                type="text"
+                name="email"
+                value="<%= user.email %>">
+
+            <!-- Image URL field with existing value -->
+            <input
+                class="px-5 py-2 border-2 bg-transparent border-zinc-800 rounded-lg"
+                placeholder="image url"
+                type="text"
+                name="image"
+                value="<%= user.image %>">
+
+            <!-- Submit button -->
+            <input
+                class="px-5 py-2 bg-yellow-500 rounded-lg ml-3 text-black"
+                type="submit"
+                value="Update User">
+
+        </form>
+    </div>
+
+</body>
+</html>

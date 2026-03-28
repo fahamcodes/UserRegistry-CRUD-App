@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserRegistry</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <!-- Main container -->
+    <div class="w-full min-h-screen bg-zinc-900 p-10 text-white">
+        <h1 class="text-4xl font-semibold tracking-tight mb-10 text-center ">UserRegistry </h1>
+
+        <!-- Navigation link to view all users -->
+        <div class="nav mb-10">
+            <a class="text-blue-500" href="/read">Read Users</a>
+        </div>
+
+        <!-- Page heading -->
+        <h1 class="text-3xl tracking-tighter mb-3">Create User</h1>
+
+        <!-- Form to create a new user -->
+        <!-- Data is sent to /create route using POST method -->
+        <form action="/create" method="post">
+
+            <!-- User name input -->
+            <input
+                class="px-5 py-2 border-2 bg-transparent border-zinc-800 rounded-lg"
+                placeholder="name"
+                type="text"
+                name="name">
+
+            <!-- User email input -->
+            <input
+                class="px-5 py-2 border-2 bg-transparent border-zinc-800 rounded-lg"
+                placeholder="email"
+                type="text"
+                name="email">
+
+            <!-- Image URL input (used to display profile image later) -->
+            <input
+                class="px-5 py-2 border-2 bg-transparent border-zinc-800 rounded-lg"
+                placeholder="image url"
+                type="text"
+                name="image">
+
+            <!-- Submit button -->
+            <input
+                class="px-5 py-2 bg-blue-500 rounded-lg ml-3"
+                type="submit"
+                value="Create User">
+
+        </form>
+    </div>
+
+</body>
+</html>
